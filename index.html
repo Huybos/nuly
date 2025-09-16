@@ -4,54 +4,49 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>NULY – Ả RẬP BUÔN VÀNG • Trading Calculator PRO (OFFLINE)</title>
-<style>
-:root{--bg:#0b1220;--card:#121a2a;--text:#e8f0ff;--muted:#9fb0d1;--accent:#29d391;--danger:#ff6b6b;--warn:#ffd166;--accentBorder:#33e3a0}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;background:linear-gradient(180deg,#09111f,#0b1424 40%,#0a0f1a);color:var(--text)}
-header{padding:14px 12px;background:rgba(11,20,36,.55);backdrop-filter:blur(6px);position:sticky;top:0;border-bottom:1px solid rgba(255,255,255,.06);z-index:5}
-h1{margin:0;font-size:18px} .sub{color:var(--muted);font-size:12px;margin-top:4px}
-.container{max-width:1100px;margin:10px auto;padding:0 12px 70px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tab-btn{padding:8px 10px;border-radius:10px;background:#14213a;border:1px solid #243252;color:#d7e6ff;cursor:pointer}
-.tab-btn.active{background:#0ea371;border-color:#0ea371}
-.card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px;margin-top:10px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.grid{display:grid;gap:12px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
-label{font-size:12px;color:var(--muted)}
-input,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:#0e1626;color:#e8f0ff}
-/* radio */
-input[type="radio"]{transform:scale(1.35);margin-right:8px;accent-color:#0ea371;vertical-align:middle}
-.hint{font-size:11px;color:#9fb0d1;margin-top:4px;opacity:.9}
-.kpi{display:grid;gap:8px;grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.kpi{grid-template-columns:repeat(2,1fr)}}
-.metric{background:#0e1728;border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:10px}
-.metric .label{color:#9fb0d1;font-size:12px}
-.metric .val{font-size:20px;margin-top:4px}
-.good .val{color:var(--accent)} .bad .val{color:var(--danger)} .warn .val{color:var(--warn)}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-button{background:#14213a;border:1px solid rgba(255,255,255,.08);color:#d7e6ff;border-radius:10px;padding:8px 12px;cursor:pointer}
-.primary{background:#0ea371;border-color:#0ea371}
-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right}th:first-child,td:first-child{text-align:left}
-.hidden{display:none}
-.note{color:#ffd166;font-size:12px;margin:-2px 0 6px}
-footer{position:fixed;right:10px;bottom:8px;color:#9fb0d1;font-size:12px}
-.help{font-size:11px;color:#ffd166}
-.focus-wrap{margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(180deg,#0e1524,#0e172a);
-  border:2.5px solid var(--accentBorder);box-shadow:0 0 0 4px rgba(51,227,160,.10), 0 14px 34px rgba(0,0,0,.40)}
-.focus-title{font-size:13px;color:#a7ffda;margin-bottom:8px;letter-spacing:.2px}
-.badge-warn{display:inline-block;padding:4px 8px;border-radius:999px;background:#2c1f07;border:1px solid #f4a261;color:#ffd166;font-size:11px;margin-left:6px}
-.small{font-size:12px;color:#9fb0d1}
-/* Collapsible notes */
-details.expl{margin-top:6px;background:#0e1524;border:1px dashed rgba(255,255,255,.12);border-radius:10px;padding:6px}
-details.expl>summary{cursor:pointer;color:#a7ffda;font-size:12px;outline:none}
-details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
-.toggle-notes{font-size:12px;margin-left:auto}
-</style>
-
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0ea371">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-
+<style>
+:root{--bg:#0b1220;--card:#121a2a;--text:#e8f0ff;--muted:#9fb0d1;--accent:#29d391;--danger:#ff6b6b;--warn:#ffd166;--accentBorder:#33e3a0}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;background:linear-gradient(180deg,#09111f,#0b1424 40%,#0a0f1a);color:var(--text)}
+header{padding:14px 12px;background:rgba(11,20,36,.55);backdrop-filter:blur(6px);position:sticky;top:0;border-bottom:1px solid rgba(255,255,255,.06);z-index:5}
+h1{margin:0;font-size:18px} .sub{color:#9fb0d1;font-size:12px;margin-top:4px}
+.container{max-width:1100px;margin:10px auto;padding:0 12px 80px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab-btn{padding:10px 12px;border-radius:12px;background:#14213a;border:1px solid #243252;color:#d7e6ff;cursor:pointer}
+.tab-btn.active{background:#0ea371;border-color:#0ea371;color:#052e1f}
+.card{background:#121a2a;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px;margin-top:10px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+label{font-size:12px;color:#9fb0d1}
+input,select{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0e1626;color:#e8f0ff}
+.hint{font-size:11px;color:#9fb0d1;margin-top:6px;opacity:.9}
+.kpi{display:grid;gap:8px;grid-template-columns:repeat(3,1fr)}@media(max-width:900px){.kpi{grid-template-columns:repeat(2,1fr)}}
+.metric{background:#0e1728;border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:12px}
+.metric .label{color:#9fb0d1;font-size:12px}
+.metric .val{font-size:20px;margin-top:4px}
+.good .val{color:#29d391} .bad .val{color:#ff6b6b} .warn .val{color:#ffd166}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}
+button{background:#14213a;border:1px solid rgba(255,255,255,.08);color:#d7e6ff;border-radius:12px;padding:10px 12px;cursor:pointer}
+.primary{background:#0ea371;border-color:#0ea371;color:#052e1f}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,.06);text-align:right}th:first-child,td:first-child{text-align:left}
+.hidden{display:none}
+footer{position:fixed;right:10px;bottom:8px;color:#9fb0d1;font-size:12px}
+.focus-wrap{margin-top:12px;padding:14px;border-radius:18px;background:linear-gradient(180deg,#0e1524,#0e172a);border:2.5px solid #33e3a0;box-shadow:0 0 0 4px rgba(51,227,160,.10),0 14px 34px rgba(0,0,0,.40)}
+.focus-title{font-size:13px;color:#a7ffda;margin-bottom:8px;letter-spacing:.2px}
+.badge-warn{display:inline-block;padding:6px 10px;border-radius:999px;background:#2c1f07;border:1px solid #f4a261;color:#ffd166;font-size:12px}
+.small{font-size:12px;color:#9fb0d1}
+.mode{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.seg{padding:10px 12px;border-radius:999px;border:1px solid #2a3e60;background:#14213a;color:#e6f2ff;cursor:pointer;user-select:none}
+.seg.active{background:#0ea371;border-color:#0ea371;color:#052e1f;font-weight:600}
+.mode .note-line{width:100%}
+details.expl{margin-top:6px;background:#0e1524;border:1px dashed rgba(255,255,255,.12);border-radius:10px;padding:6px}
+details.expl>summary{cursor:pointer;color:#a7ffda;font-size:12px}
+details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
+</style>
 </head>
 <body>
 <header>
@@ -65,14 +60,14 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
     <button class="tab-btn" data-tab="help">📖 Hướng dẫn</button>
   </div>
 
-  <!-- 1) POSITION SIZING -->
   <section id="sizing" class="card">
     <h2>Quản lý khối lượng lệnh</h2>
-    <div class="row">
-      <label><input type="radio" name="mode" value="risk" checked> Nhập <b>Rủi ro %/lệnh</b> → tính Lot</label>
-      <label><input type="radio" name="mode" value="lot"> Nhập <b>Khối lượng Lot</b> → tính Rủi ro %</label>
-      <span class="badge-warn" id="lot-note" style="display:none">Đã áp min lot 0.01 → rủi ro thực tế tăng</span>
+    <div class="mode">
+      <div class="seg active" data-mode="risk">Nhập <b>Rủi ro %/lệnh</b> → tính Lot</div>
+      <div class="seg" data-mode="lot">Nhập <b>Khối lượng Lot</b> → tính Rủi ro %</div>
+      <span class="note-line"><span class="badge-warn" id="lot-note" style="display:none">Đã áp min lot 0.01 → rủi ro thực tế tăng</span></span>
     </div>
+
     <div class="grid g3">
       <div><label>Vốn tài khoản ($)</label><input id="equity" type="number" value="5000"></div>
       <div><label>Tỉ lệ thắng (p)</label><input id="p" type="number" step="0.01" value="0.55"></div>
@@ -124,11 +119,10 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
     </div>
   </section>
 
-  <!-- 2) DAILY RISK with hidden notes -->
   <section id="daily" class="card hidden">
     <div class="row" style="align-items:center">
       <h2 style="margin:0">Quản lý rủi ro/ngày (Chuẩn FTMO/Prop)</h2>
-      <button class="toggle-notes" onclick="toggleAllNotes()">Bật/Tắt tất cả ghi chú</button>
+      <button class="tab-btn" onclick="toggleAllNotes()">Bật/Tắt ghi chú</button>
     </div>
     <div class="small">Kiểm tra vi phạm theo <b>Start-of-Day</b> & <b>Overall</b>. R/lệnh có thể <i>“Lấy từ tab Khối lượng”</i>.</div>
 
@@ -137,25 +131,21 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
         <label>Start-of-day equity E₀ ($)</label>
         <input id="qE0" type="number" value="100000">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>E₀ là <b>số dư/Equity tại 00:00</b> (theo giờ server mà quỹ quy định). <br>
-          Quy tắc daily thường: <i>bất kỳ lúc nào trong ngày</i>, nếu Equity giảm vượt <code>E₀ × Daily%</code> → <b>vi phạm</b>.
-          </div>
+          <div>E₀ là <b>số dư/Equity tại 00:00</b> (giờ server quỹ). Daily cap = <code>E₀ × Daily%</code>.</div>
         </details>
       </div>
       <div>
         <label>Daily loss limit (%)</label>
         <input id="qDayPct" type="number" step="0.1" value="5">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>Ví dụ FTMO: <b>5%/ngày</b>. Daily cap = <code>E₀ × 5%</code>. <br>
-          Ở đây app tính <b>Daily used = max(0, −P/L hôm nay)</b> (đã gồm floating).</div>
+          <div>VD 5%/ngày. Daily used = <code>max(0, −P/L hôm nay)</code> (đã gồm floating).</div>
         </details>
       </div>
       <div>
         <label>Rủi ro mỗi lệnh R ($)</label>
         <input id="qR" type="number" value="300">
         <details class="expl"><summary>Ghi chú</summary>
-          <div><b>R/lệnh</b> là mức lỗ tiền nếu SL hit cho 1 lệnh. <br>
-          Nên dùng nút <i>Lấy từ tab Khối lượng</i> để lấy <b>R thực tế</b> sau làm tròn lot (≥0.01).</div>
+          <div>R = tiền lỗ nếu SL chạm. Nên <i>Lấy từ tab Khối lượng</i> để dùng <b>R thực tế</b> (lot ≥ 0.01).</div>
         </details>
       </div>
     </div>
@@ -165,23 +155,21 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
         <label>P/L hôm nay (realized + floating) ($)</label>
         <input id="qPLToday" type="number" value="0">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>Nhập <b>lãi/lỗ hiện tại</b> của riêng ngày hôm nay, gồm cả lệnh đang chạy (floating). <br>
-          Số âm = đang lỗ → tính vào <b>Daily used</b>.</div>
+          <div>Âm = lỗ → tính vào Daily used.</div>
         </details>
       </div>
       <div>
         <label>Equity tham chiếu (overall) ($)</label>
         <input id="qEq" type="number" value="100000">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>Đa số quỹ dùng <b>vốn ban đầu</b> làm mốc overall (VD 100k). <br>
-          Một số nơi có biến thể theo <i>max equity đạt được</i> — tuỳ quỹ, anh chỉnh tại đây.</div>
+          <div>Thường là vốn ban đầu; vài quỹ dùng mốc khác (max equity).</div>
         </details>
       </div>
       <div>
         <label>Overall loss limit (%)</label>
         <input id="qAllPct" type="number" step="0.1" value="10">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>Ví dụ FTMO: <b>10% tổng</b>. Overall cap = <code>Equity tham chiếu × 10%</code>.</div>
+          <div>VD 10% tổng. Overall cap = <code>Ref × %</code>.</div>
         </details>
       </div>
     </div>
@@ -191,7 +179,7 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
         <label>Lỗ lũy kế trước hôm nay ($)</label>
         <input id="qCumLoss" type="number" value="0">
         <details class="expl"><summary>Ghi chú</summary>
-          <div>Tổng lỗ đã phát sinh <b>trước 00:00 hôm nay</b> (không bao gồm P/L của hôm nay).</div>
+          <div>Lỗ đã phát sinh trước 00:00 hôm nay.</div>
         </details>
       </div>
       <div>
@@ -222,53 +210,40 @@ details.expl[open]{box-shadow:inset 0 0 0 1px rgba(41,211,145,.25)}
     </div>
   </section>
 
-  <!-- 3) HELP (minimal) -->
   <section id="help" class="card hidden">
     <h2>📖 Hướng dẫn</h2>
-    <p>
-      Video: <a href="https://youtu.be/djg4uDW0q3g" target="_blank" style="color:#29d391">
-      https://youtu.be/djg4uDW0q3g</a>
-    </p>
+    <p>Video: <a href="https://youtu.be/djg4uDW0q3g" target="_blank" style="color:#29d391">https://youtu.be/djg4uDW0q3g</a></p>
   </section>
 </div>
 <footer>© 2025 NULY – Ả RẬP BUÔN VÀNG • Carl</footer>
 
 <script>
-// ===== Constants (sizing) =====
-const LOT_STEP = 0.01;
-const MIN_LOT = 0.01;
-
-// ===== Helpers =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+  });
+}
+const LOT_STEP = 0.01; const MIN_LOT = 0.01;
 const $ = id => document.getElementById(id);
 const num = id => parseFloat($(id).value||"0");
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const fmt=(x,d=2)=> (isFinite(x)?x:0).toLocaleString(undefined,{minimumFractionDigits:d,maximumFractionDigits:d});
 function showVal(id,v,d=2){ $(id).textContent = fmt(v,d); }
-
-// Tabs
 document.querySelectorAll('.tab-btn').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active');
   document.querySelectorAll('section.card').forEach(s=>s.classList.add('hidden'));
   $(b.dataset.tab).classList.remove('hidden');
 });
-
-// Mode toggle
-function switchMode(){
-  const mode = document.querySelector('input[name=mode]:checked').value;
+let mode='risk';
+function updateModeUI(){
+  document.querySelectorAll('.seg').forEach(el=>{ el.classList.toggle('active', el.dataset.mode===mode); });
   $('riskRow').classList.toggle('hidden', mode!=='risk');
   $('lotRow').classList.toggle('hidden', mode!=='lot');
-  calc();
 }
-document.querySelectorAll('input[name=mode]').forEach(r=>r.onchange=switchMode);
-
-// Quantize lot
-function quantizeLot(lot){
-  if (!isFinite(lot)) return 0;
-  if (lot < MIN_LOT) return MIN_LOT;
-  return Math.round(lot/LOT_STEP)*LOT_STEP;
-}
-
-// Sizing core
+document.querySelectorAll('.seg').forEach(el=>{
+  el.addEventListener('click', ()=>{ mode = el.dataset.mode; updateModeUI(); calc(); });
+});
+function quantizeLot(lot){ if(!isFinite(lot)) return 0; if(lot<MIN_LOT) return MIN_LOT; return Math.round(lot/LOT_STEP)*LOT_STEP; }
 function fromRisk(eq,pct,rr,sl,per,fee,p){
   const R_target = eq*(pct/100);
   const lotIdeal = (sl*per)>0 ? R_target/(sl*per) : 0;
@@ -287,17 +262,14 @@ function fromLot(eq,lotIn,rr,sl,per,fee,p){
   const EV = p*win + (1-p)*loss;
   return {R_target:R_actual, R_actual, lot, win, loss, EV, pct, bumped: lot !== lotIn};
 }
-
 let lastSizing = null;
 function calc(){
   const eq=num('equity'), p=clamp(num('p'),0,1), rr=num('rr'), sl=num('sl'), per=num('per'), fee=num('fee'), tpd=num('tpd'), days=num('days');
-  const mode=document.querySelector('input[name=mode]:checked').value;
   let out;
   if(mode==='risk'){ out=fromRisk(eq,num('riskPct'),rr,sl,per,fee,p); $('riskVal').textContent = out.pct.toFixed(2)+'%'; }
   else { out=fromLot(eq,num('lotIn'),rr,sl,per,fee,p); $('riskVal').textContent = out.pct.toFixed(2)+'%'; }
   lastSizing = out;
   $('lot-note').style.display = out.bumped ? 'inline-block' : 'none';
-
   showVal('riskUsdTarget', out.R_target);
   showVal('riskUsd', out.R_actual);
   showVal('lotOut', out.lot,2);
@@ -309,8 +281,6 @@ function calc(){
   showVal('ev', evPerTrade);
   showVal('evDay', evDay);
   showVal('evMonth', evMonth);
-
-  // Sim
   const tb=$('sim').querySelector('tbody'); tb.innerHTML='';
   [0.25,0.5,0.75,1.0,1.5,2.0].forEach(rp=>{
     const s=fromRisk(eq,rp,rr,sl,per,fee,p);
@@ -322,74 +292,20 @@ function calc(){
 calc();
 ['equity','p','rr','sl','per','fee','tpd','days','lotIn'].forEach(id=>{const el=$(id); if(!el) return; el.addEventListener('input', calc);});
 $('riskPct').addEventListener('input', ()=>{ const v=parseFloat($('riskPct').value||'0'); $('riskVal').textContent=v.toFixed(2)+'%'; calc(); });
-
-// ===== Prop / Daily Risk Control =====
-function pullRFromSizing(){
-  if(!lastSizing){ alert('Hãy tính ở tab Khối lượng trước.'); return; }
-  $('qR').value = lastSizing.R_actual.toFixed(2);
-}
+function pullRFromSizing(){ if(!lastSizing){ alert('Hãy tính ở tab Khối lượng trước.'); return; } $('qR').value = lastSizing.R_actual.toFixed(2); }
 function calcProp(){
-  const E0 = num('qE0');                 // start-of-day equity
-  const dayPct = num('qDayPct')/100;     // daily limit %
-  const PnL = num('qPLToday');           // realized + floating today
-  const EqRef = num('qEq');              // overall reference equity
-  const allPct = num('qAllPct')/100;     // overall limit %
-  const cumLoss = Math.max(0, num('qCumLoss')); // cumulative loss before today
-  const R = Math.max(0, num('qR'));      // risk per trade
-
-  const dayCap = E0 * dayPct;
-  const dayUsed = Math.max(0, -PnL);     // if PnL < 0, it's loss today
-  const dayRemain = Math.max(0, dayCap - dayUsed);
-
-  const allCap = EqRef * allPct;
-  const allUsed = Math.max(0, cumLoss + Math.max(0, -PnL));
-  const allRemain = Math.max(0, allCap - allUsed);
-
-  const maxLoseDay = R>0 ? Math.floor(dayRemain / R) : 0;
-  const maxLoseAll = R>0 ? Math.floor(allRemain / R) : 0;
-
-  showVal('qDayCap', dayCap);
-  showVal('qDayUsed', dayUsed);
-  showVal('qDayRemain', dayRemain);
-
-  showVal('qAllCap', allCap);
-  showVal('qAllUsed', allUsed);
-  showVal('qAllRemain', allRemain);
-
-  $('qMaxLoseDay').textContent = maxLoseDay + ' lệnh';
-  $('qMaxLoseAll').textContent = maxLoseAll + ' lệnh';
-
-  let adv = 'Ổn định';
-  if (dayRemain <= R) adv = 'Dừng: thêm 1 lệnh thua là vi phạm DAILY';
-  else if (allRemain <= R) adv = 'Cảnh báo: thêm 1 lệnh thua là vi phạm OVERALL';
-  else if (maxLoseDay <= 2) adv = 'Giảm R: chỉ còn chịu được ≤2 lệnh thua hôm nay';
-  $('qAdvice').textContent = adv;
+  const E0 = num('qE0'), dayPct = num('qDayPct')/100, PnL = num('qPLToday'), EqRef = num('qEq'), allPct = num('qAllPct')/100, cumLoss = Math.max(0, num('qCumLoss')), R = Math.max(0, num('qR'));
+  const dayCap = E0 * dayPct, dayUsed = Math.max(0, -PnL), dayRemain = Math.max(0, dayCap - dayUsed);
+  const allCap = EqRef * allPct, allUsed = Math.max(0, cumLoss + Math.max(0, -PnL)), allRemain = Math.max(0, allCap - allUsed);
+  const maxLoseDay = R>0 ? Math.floor(dayRemain / R) : 0, maxLoseAll = R>0 ? Math.floor(allRemain / R) : 0;
+  showVal('qDayCap', dayCap); showVal('qDayUsed', dayUsed); showVal('qDayRemain', dayRemain);
+  showVal('qAllCap', allCap); showVal('qAllUsed', allUsed); showVal('qAllRemain', allRemain);
+  $('qMaxLoseDay').textContent = maxLoseDay + ' lệnh'; $('qMaxLoseAll').textContent = maxLoseAll + ' lệnh';
+  let adv='Ổn định'; if (dayRemain <= R) adv='Dừng: thêm 1 lệnh thua là vi phạm DAILY'; else if (allRemain <= R) adv='Cảnh báo: thêm 1 lệnh thua là vi phạm OVERALL'; else if (maxLoseDay <= 2) adv='Giảm R: chỉ còn chịu được ≤2 lệnh thua hôm nay'; $('qAdvice').textContent = adv;
 }
 calcProp();
 ['qE0','qDayPct','qR','qPLToday','qEq','qAllPct','qCumLoss'].forEach(id=>{const el=$(id); if(!el) return; el.addEventListener('input', calcProp);});
-
-// Toggle all notes
-function toggleAllNotes(){
-  const items = document.querySelectorAll('details.expl');
-  const someClosed = Array.from(items).some(d=>!d.open);
-  items.forEach(d=>{ d.open = someClosed; });
-}
-
-// Save/Load (basic for sizing)
-function saveCfg(){ const o={mode:document.querySelector('input[name=mode]:checked').value,equity:num('equity'),p:num('p'),rr:num('rr'),riskPct:num('riskPct'),lotIn:num('lotIn'),sl:num('sl'),per:num('per'),fee:num('fee'),tpd:num('tpd'),days:num('days')}; localStorage.setItem('nuly_cfg_offline',JSON.stringify(o)); alert('Đã lưu.'); }
-function loadCfg(){ const raw=localStorage.getItem('nuly_cfg_offline'); if(!raw) return; const o=JSON.parse(raw); for(const k in o){ if($(k)) $(k).value=o[k]; } document.querySelector(`input[name=mode][value="${o.mode||'risk'}"]`).checked=true; switchMode(); calc(); }
-switchMode();
+function toggleAllNotes(){ const items = document.querySelectorAll('details.expl'); const someClosed = Array.from(items).some(d=>!d.open); items.forEach(d=>{ d.open = someClosed; }); }
 </script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./service-worker.js').catch(function(err){
-      console.log('SW reg failed', err);
-    });
-  });
-}
-</script>
-
 </body>
 </html>
